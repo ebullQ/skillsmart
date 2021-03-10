@@ -1,6 +1,7 @@
+package structures;
+
 import org.junit.Assert;
 import org.junit.Test;
-
 public class LinkedListTest {
 
     @Test
