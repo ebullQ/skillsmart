@@ -1,14 +1,11 @@
-package structures;
-
 import org.junit.Assert;
 import org.junit.Test;
-import structures.LinkedList.Node;
 
-public class LinkedListTest {
+public class LinkedList2Test {
 
     @Test
     public void countTesting() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList2 linkedList = new LinkedList2();
         Assert.assertEquals(0, linkedList.count());
 
         linkedList.addInTail(new Node(10));
@@ -21,7 +18,7 @@ public class LinkedListTest {
 
     @Test
     public void removeOneTesting() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList2 linkedList = new LinkedList2();
         Assert.assertFalse(linkedList.remove(10));
 
         linkedList.addInTail(new Node(10));
@@ -43,7 +40,7 @@ public class LinkedListTest {
 
     @Test
     public void removeAllTesting() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList2 linkedList = new LinkedList2();
         linkedList.addInTail(new Node(10));
         linkedList.addInTail(new Node(200));
         linkedList.addInTail(new Node(10));
@@ -70,7 +67,7 @@ public class LinkedListTest {
 
     @Test
     public void clearTesting() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList2 linkedList = new LinkedList2();
 
         linkedList.addInTail(new Node(10));
         linkedList.addInTail(new Node(50));
@@ -84,7 +81,7 @@ public class LinkedListTest {
 
     @Test
     public void findAllTesting() {
-        LinkedList linkedList = new LinkedList();
+        LinkedList2 linkedList = new LinkedList2();
         Assert.assertEquals(0, linkedList.findAll(10).size());
 
         linkedList.addInTail(new Node(10));
@@ -101,7 +98,7 @@ public class LinkedListTest {
     public void insertAfterTesting() {
         Node node1 = new Node(10);
         Node node2 = new Node(20);
-        LinkedList linkedList = new LinkedList();
+        LinkedList2 linkedList = new LinkedList2();
         linkedList.addInTail(node1);
         linkedList.addInTail(node2);
 
@@ -119,32 +116,4 @@ public class LinkedListTest {
         Assert.assertEquals(5, linkedList.count());
         Assert.assertEquals(70, linkedList.tail.value);
     }
-
-    @Test
-    public void sumEqualSizeListsTesting() {
-        LinkedList first = new LinkedList();
-        LinkedList second = new LinkedList();
-        LinkedList linkedList1 = LinkedList.sumEqualSizeLists(first, second);
-        Assert.assertEquals(0, linkedList1.count());
-
-        first.addInTail(new Node(12));
-        second.addInTail(new Node(30));
-
-        LinkedList linkedList2 = LinkedList.sumEqualSizeLists(first, second);
-        Assert.assertEquals(1, linkedList2.count());
-        Assert.assertEquals(42, linkedList2.head.value);
-
-        first.addInTail(new Node(50));
-        first.addInTail(new Node(200));
-        second.addInTail(new Node(100));
-        second.addInTail(new Node(500));
-        LinkedList linkedList3 = LinkedList.sumEqualSizeLists(first, second);
-        Assert.assertEquals(3, linkedList3.count());
-        Assert.assertEquals(42, linkedList3.head.value);
-        Assert.assertEquals(700, linkedList3.tail.value);
-
-        LinkedList linkedList4 = LinkedList.sumEqualSizeLists(linkedList2, linkedList3);
-        Assert.assertEquals(0, linkedList4.count());
-    }
-
 }
