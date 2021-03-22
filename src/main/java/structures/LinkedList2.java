@@ -1,3 +1,5 @@
+package structures;
+
 import java.util.*;
 
 public class LinkedList2 {
@@ -105,16 +107,16 @@ public class LinkedList2 {
             _nodeAfter.next = _nodeToInsert;
         }
     }
-}
 
-class Node {
-    public int value;
-    public Node next;
-    public Node prev;
+    static class Node {
+        public int value;
+        public Node next;
+        public Node prev;
 
-    public Node(int _value) {
-        value = _value;
-        next = null;
-        prev = null;
+        public Node(int _value) {
+            value = _value;
+            next = null;
+            prev = null;
+        }
     }
 }
