@@ -1,3 +1,5 @@
+package structures;
+
 public class Stack<T> {
     public Node<T> head;
     public Node<T> tail;
